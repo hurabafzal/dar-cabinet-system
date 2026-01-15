@@ -1,0 +1,102 @@
+.cabinetItemContainer {
+  display: inline-block;
+  width: 100%;
+}
+
+.cabinetItem {
+  width: 50%;
+  display: inline-block;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  padding-bottom: 15px;
+  text-shadow: 1px 1px 2px #ffffff;
+}
+
+.cabinetItemHeader {
+  color: #2a2a2a;
+  font-weight: bold;
+}
+
+.cabinetItemBody {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.cabbinetItemImg {
+  border-radius: 4px;
+  aspect-ratio: 1.2;
+}
+
+.cabinetDescription {
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #2a2a2a;
+  gap: 6px;
+}
+
+.descriptionTitle {
+  color: #2a2a2a;
+  width: 100%;
+  margin-top: 1vh;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.sidebarRHeader {
+  width: 100%;
+  height: 70px;
+  font-size: 1.3rem;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0px 0px 2px 1px rgba(155, 152, 152, 0.6);
+  text-shadow: 1px 1px 2px #ffffff;
+  color: #2a2a2a;
+}
+
+.sidebarCabinetTitle {
+  background-color: lightgrey;
+  bottom: 0px;
+  color: black;
+  right: 0px;
+  width: 95%;
+  padding: 10px;
+  font-size: 0.9rem;
+  text-align: center;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1000px) {
+  .sidebarRHeader {
+    height: 50px;
+    font-size: 14px;
+    padding: 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .cabinetItem {
+    width: 100%;
+  }
+}
+
+@media (min-width: 2560px) {
+  .descriptionTitle {
+    font-size: 28px;
+  }
+  .cabinetDescription {
+    font-size: 24px;
+  }
+}

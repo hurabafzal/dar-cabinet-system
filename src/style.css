@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap');
+@import url('./utils/rtl-utils.css');
+
+@font-face {
+  font-family: myTitleFont;
+  src: url("../public/font/montserrat/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: myHeaderFont;
+  src: url("../public/font/montserrat/Montserrat-Thin.ttf");
+}
+
+@font-face {
+  font-family: TSdeniz;
+  src: url("../public/font/font5.ttf");
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  /* scrollbar - hidden */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* RTL/LTR Language Direction Styles */
+html[dir="rtl"] *:not(.fas):not(.fab):not(.far):not(.fa) {
+  font-family: 'Cairo', sans-serif !important;
+}
+
+/* Preserve Font Awesome icons in RTL mode */
+html[dir="rtl"] .fas,
+html[dir="rtl"] .fab,
+html[dir="rtl"] .far,
+html[dir="rtl"] .fa {
+  font-family: 'Font Awesome 5 Free', 'FontAwesome' !important;
+  font-weight: 900;
+}
+html[dir="rtl"] {
+  text-align: right;
+}
+
+html[dir="ltr"] {
+  text-align: left;
+}
+
+html[dir="rtl"] input,
+html[dir="rtl"] textarea {
+  text-align: right;
+}
+
+html[dir="rtl"] .accordion-button::after {
+  margin-inline-start: 0;
+  margin-inline-end: auto;
+}
+
+html[dir="rtl"] .form-check-input {
+  float: inline-end;
+  margin-inline-start: 0.5rem;
+  margin-inline-end: -1.5rem;
+}
+
+html[dir="rtl"] .modal-header .btn-close {
+  margin: -0.5rem auto -0.5rem -0.5rem;
+}
+
+/* Header controls styling */
+.header-controls-container {
+  position: fixed;
+  top: 20px;
+  inset-inline-end: 20px;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Button styles removed */
+
+/* Language dropdown specific styles */
+.language-dropdown {
+  position: relative;
+  z-index: 1100;
+}
+
+/* Language dropdown positioning - fixed for all directions */
+.language-dropdown-menu {
+  /* Always position dropdown from the right side */
+  right: 0;
+  /* No transform to ensure consistent positioning */
+}
+
+/* Keep the internal content direction-aware */
+.language-dropdown-menu.rtl-content {
+  direction: rtl;
+}
+
+.language-dropdown-menu.ltr-content {
+  direction: ltr;
+}
+
+.language-option:hover {
+  background-color: #f5f5f5;
+}
+
+html[dir="rtl"] .language-option img {
+  margin-inline-end: 0;
+  margin-inline-start: 10px;
+}
+
+/* Add more RTL-specific overrides as needed */
+
+html,
+body,
+canvas {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  color: white;
+  background-color: black;
+  transition: none;
+  animation: none;
+  /* font-family: "TSdeniz"; */
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  color: white;
+  background-color: black;
+}
+
+h5 {
+  margin-top: 3px;
+  margin-bottom: 8px;
+}
+
+h4 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+h3 {
+  margin-top: 3px;
+  margin-bottom: 8px;
+}
+
+h2 {
+  margin-top: 3px;
+  margin-bottom: 8px;
+}
+
+.rcb-loader-overlay {
+  position: fixed;
+  top: 0;
+  inset-inline-start: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-mask: rgba(0, 0, 0, 0.5);
+  mask: rgba(0, 0, 0, 0.5);
+}
+
+.button {
+  border: none;
+  color: white;
+  background-color: gray;
+  padding: 3px 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 3px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: gray;
+  color: black;
+  border: 2px solid #4caf50;
+}
+
+.button1:hover {
+  background-color: #4caf50;
+  color: white;
+}
+
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #008cba;
+}
+
+.button2:hover {
+  background-color: #008cba;
+  color: white;
+}
+
+.custom-loader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: conic-gradient(#0000 10%, #ddb400);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+  mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+  animation: s3 1s infinite linear;
+}
+
+@keyframes s3 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.htmlContent1 {
+  width: 60px;
+  height: 45px;
+  padding-top: 5px;
+  transform: translate3d(calc(50%), 50px, 0);
+  text-align: left;
+  background: #cccccc;
+  color: rgb(0, 0, 0);
+  padding: 10px 15px;
+  border: solid #cccccc;
+  border-radius: 5px;
+  opacity: 0.6;
+  transition-duration: 0.2s;
+  z-index: 99;
+}
+
+.htmlContent1:hover {
+  background: #fafafa;
+  border: solid #cccccc;
+  opacity: 0.7;
+}
+
+.htmlContent2 {
+  width: 60px;
+  height: 45px;
+  padding-top: 10px;
+  transform: translate3d(calc(50%), calc(-300%), 0);
+  text-align: left;
+  background: #cccccc;
+  color: rgb(0, 0, 0);
+  border: solid #cccccc;
+  padding: 10px 15px;
+  border-radius: 5px;
+  opacity: 0.6;
+  transition-duration: 0.2s;
+  z-index: 99;
+}
+
+.htmlContent2:hover {
+  background: #fafafa;
+  border: solid #cccccc;
+  opacity: 0.7;
+}
+
+.htmlContent3 {
+  width: 60px;
+  height: 45px;
+  padding-top: 10px;
+  transform: translate3d(calc(50%), -50px, 0);
+  text-align: left;
+  background: #cccccc;
+  color: rgb(0, 0, 0);
+  border: solid #cccccc;
+  padding: 10px 15px;
+  border-radius: 5px;
+  opacity: 0.6;
+  transition-duration: 0.2s;
+  z-index: 99;
+}
+
+.htmlContent3:hover {
+  background: #fafafa;
+  border: solid #cccccc;
+  opacity: 0.7;
+}
+
+.dragReadyTag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  transform: translate3d(-50%, -120%, 0);
+  background: #000;
+  color: #fff;
+  border-radius: 3px;
+  opacity: 0.9;
+  z-index: 99;
+}
+
+.moveIcon {
+  color: #fff;
+}
+
+
+.rcb-bot-avatar {
+  border-radius: 50%;
+}
+
+.rcb-options-container {
+  height: 41px;
+}
+
+.rcb-close-chat-icon::after {
+  background-color: transparent;
+  transition: none;
+}
+
+.rcb-checkbox-row-container:hover {
+  margin-top: 1px;
+  margin-left: 1px;
+}
+
+.rcb-checkbox-next-button:hover {
+  margin-top: 1px;
+  margin-left: 1px;
+  background-color: #ffa500;
+}
+
+.rcb-dot {
+  background-color: #d0f0c0;
+}
+
+.Toastify__toast {
+  white-space: pre-wrap !important;
+}
+
+@media screen and (orientation: portrait) {
+  body {
+    /*transform-origin: top left;
+    transform: rotate(90deg) translateY(-100%);*/
+    width: 100vh !important;
+    height: 100vw !important;
+    margin: 0;
+  }
+
+  #root {
+    width: 100%;
+    height: 100%;
+  }
+
+  canvas {
+    position: relative;
+    width: 100vh !important;
+    height: 100vw !important;
+  }
+
+  .scene {
+    width: 100%;
+    height: 100%;
+  }
+
+  .initailModalContainer {
+    width: 100%;
+    height: 100%;
+  }
+
+  .initailModal {
+    height: 20vh;
+    width: 40vh;
+  }
+}
+
+.toolbar,
+.navbar {
+  position: fixed !important;
+  min-height: 44px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-components{
+  filter: blur(100px);
+}
+
+.icon-sidebar.tour-visible{
+  inset-inline-start: 50px;
+}

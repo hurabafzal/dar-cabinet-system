@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">DAR Platform</string>
+    <string name="title_activity_main">DAR Platform</string>
+    <string name="package_name">com.darfurniture.productconfigurator</string>
+    <string name="custom_url_scheme">com.darfurniture.productconfigurator</string>
+</resources>

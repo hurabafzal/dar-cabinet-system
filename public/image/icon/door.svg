@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" width="99.63mm" height="154.19mm" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 282.41 437.08">
+  <defs>
+    <clipPath id="clippath">
+      <rect x="17.2" y="17.2" width="248.01" height="402.68" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <rect x="16" y="16" width="250" height="405" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+  </defs>
+  <g style="clip-path: url(#clippath);">
+    <path d="m265.7,23.05c0-.21,0-.43,0-.65,0-3.32-2.81-6.15-6.14-6.15H22.75c-3.32,0-6.14,2.82-6.14,6.15v344.03c0,15.81-.64,31.77,0,47.57,0,.21,0,.43,0,.65,0,3.32,2.81,6.14,6.14,6.14h236.81c1.88,0,3.31-.7,4.3-1.76,1.11-.99,1.84-2.45,1.84-4.38V70.62c0-15.81.64-31.77,0-47.57Zm-86.29,385.45H28.9V38.41c0-3.2.23-6.56.25-9.87h224.27v337.89c0,13.98-.49,28.07-.17,42.07h-73.84Z" style="stroke-width: 0px;"/>
+  </g>
+  <path d="m212.61,198.21c-10.73-.04-19.78,9.16-19.73,19.86.04,10.73,8.93,19.85,19.73,19.85s18.47-8.24,19.6-18.27c.1-.49.15-1.02.13-1.59.02-.57-.03-1.1-.13-1.59-1.13-10.04-9.06-18.23-19.6-18.27Zm-7.45,19.86c0-9.78,14.5-9.73,14.89,0-.39,9.72-14.89,9.78-14.89,0Z" style="stroke-width: 0px;"/>
+  <g style="clip-path: url(#clippath-1);">
+    <path d="m16,16v405.08h250.41V16H16" style="fill: none; stroke: #000; stroke-width: 32px;"/>
+  </g>
+</svg>

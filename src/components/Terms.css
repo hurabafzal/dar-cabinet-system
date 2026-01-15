@@ -1,0 +1,555 @@
+#root{
+  overflow: scroll !important;
+}
+.terms-wrapper {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding-bottom: 70px; /* Space for sticky button */
+}
+
+@media (min-width: 992px) {
+  .terms-wrapper {
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .terms-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    max-height: 800px;
+  }
+
+  .terms-card-body {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: calc(80vh - 60px); /* Subtract header height */
+  }
+  
+  .items-container {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+}
+
+/* Main mobile accordion styling */
+.main-accordion-header .accordion-button {
+  background-color: #0d5362;
+  color: white;
+  font-weight: 500;
+}
+
+.main-accordion-header .accordion-button:not(.collapsed) {
+  background-color: #0d5362;
+  color: white;
+}
+
+.main-accordion-header .accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13, 83, 98, 0.25);
+}
+
+.main-accordion-header .accordion-button::after {
+  filter: brightness(0) invert(1);
+}
+
+/* Nested accordions styling */
+.accordion-button:not(.collapsed) {
+  background-color: rgba(13, 83, 98, 0.1);
+  color: #0d5362;
+}
+
+.accordion-button:focus {
+  border-color: #0d5362;
+  box-shadow: 0 0 0 0.25rem rgba(13, 83, 98, 0.25);
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}
+
+.terms-scroll-container {
+  padding-right: 10px;
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
+
+.card {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #0d5362;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.sticky-proceed-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0d5362;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 15px 0;
+  transition: all 0.3s ease;
+}
+
+.sticky-proceed-container.payment-ready {
+  box-shadow: 0 -4px 20px rgba(13, 83, 98, 0.4);
+  padding: 18px 0;
+}
+
+.sticky-proceed-content {
+  justify-content: space-between;
+  color: white;
+  align-items: center;
+}
+
+/* Enhanced payment button with call to action */
+.payment-ready .payment-button-enabled::after {
+  content: ' 🔒';
+  font-size: 14px;
+}
+
+/* Show subtle hint to agree to terms */
+.terms-agreement-hint {
+  position: fixed;
+  bottom: 75px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid #e0e0e0;
+  font-size: 14px;
+  color: #0d5362;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.terms-agreement-hint.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Theme colors */
+.bg-primary {
+  background-color: #0d5362 !important;
+}
+
+.btn-primary {
+  background-color: #0d5362;
+  border-color: #0d5362;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #0a414e;
+  border-color: #0a414e;
+}
+
+.btn-outline-primary {
+  color: #0d5362;
+  border-color: #0d5362;
+}
+
+.btn-outline-primary:hover {
+  background-color: #0d5362;
+  border-color: #0d5362;
+}
+
+.text-primary {
+  color: #0d5362 !important;
+}
+
+.badge.bg-primary {
+  background-color: #0d5362 !important;
+}
+.order-body{
+  overflow-y: scroll;
+}
+@media (max-width: 991px) and (orientation: landscape) {
+  .container-terms {
+    padding: 4rem 2rem !important;
+  }
+}
+
+@media (max-width: 568px) and (orientation: landscape) {
+  .container-terms {
+    padding: 3rem 1.5rem !important;
+  }
+}
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.lightbox-image {
+  max-width: 95%;
+  max-height: 95vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 10000;
+}
+
+.backbtn{
+  position: fixed;
+  left: 33px;
+  top: 20px;
+  z-index: 999;
+  background: #0d5362;
+  border-radius: 100px;
+}
+.backbtn button{
+  border-radius: 100px;
+  width: 100px;
+  padding: 3px;
+  color: #fff;
+}
+
+/* Fix for RTL checkbox position in Terms and Conditions */
+/* Enhanced Terms Checkbox Styling */
+.terms-checkbox-wrapper {
+  position: relative;
+  padding: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.terms-checkbox-wrapper:hover, .terms-checkbox-wrapper:focus-within {
+  border-color: #0d5362;
+  box-shadow: 0 0 0 4px rgba(13, 83, 98, 0.1);
+}
+
+.terms-checkbox-wrapper.agreed {
+  background-color: rgba(13, 83, 98, 0.05);
+  border-color: #0d5362;
+  animation: agree-pulse 0.6s ease-in-out;
+}
+
+/* Enhanced checkbox styling */
+.terms-checkbox-wrapper .form-check-input {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #0d5362;
+  margin-top: 0.15rem;
+}
+
+.terms-checkbox-wrapper .form-check-input:checked {
+  background-color: #0d5362;
+  border-color: #0d5362;
+}
+
+.terms-checkbox-wrapper .form-check-label {
+  font-size: 1.05rem;
+  padding-left: 5px;
+}
+
+/* Add a text indicator for agreement status */
+.terms-checkbox-wrapper::after {
+  content: attr(data-status);
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  background-color: #f8f9fa;
+  padding: 0 10px;
+  font-size: 12px;
+  color: #6c757d;
+  transition: all 0.3s ease;
+}
+
+.terms-checkbox-wrapper.agreed::after {
+  content: '✓ Accepted';
+  color: #0d5362;
+  font-weight: bold;
+}
+
+html[dir="rtl"] .terms-checkbox-wrapper::after {
+  right: auto;
+  left: 15px;
+}
+
+html[dir="rtl"] .terms-checkbox-wrapper.agreed::after {
+  content: '✓ تم القبول';
+}
+
+@keyframes agree-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Highlight important sections */
+.terms-important-section {
+  background-color: rgba(13, 83, 98, 0.05);
+  border-left: 4px solid #0d5362;
+  padding-left: 15px;
+  margin-left: -15px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.terms-important-section.highlight {
+  background-color: rgba(13, 83, 98, 0.12);
+  transform: translateZ(0) scale(1.01);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+html[dir="rtl"] .terms-important-section {
+  border-left: none;
+  border-right: 4px solid #0d5362;
+  padding-left: 0;
+  padding-right: 15px;
+  margin-left: 0;
+  margin-right: -15px;
+}
+
+.terms-important-section::before {
+  content: '⚠️';
+  position: absolute;
+  top: 0;
+  left: -12px;
+  font-size: 16px;
+}
+
+html[dir="rtl"] .terms-important-section::before {
+  left: auto;
+  right: -12px;
+}
+
+html[dir="rtl"] .terms-checkbox-wrapper .form-check {
+  padding-right: 1.5rem;
+  padding-left: 0;
+  text-align: right;
+}
+
+html[dir="rtl"] .terms-checkbox-wrapper .form-check-input {
+  position: absolute;
+  right: 15px;
+  margin-left: 0;
+  margin-right: 0;
+  float: none;
+}
+
+html[dir="rtl"] .terms-checkbox-wrapper .form-check-label {
+  padding-right: 0.5rem;
+}
+
+/* Ensure proper spacing between checkbox and text in RTL mode */
+html[dir="rtl"] .form-check-label {
+  display: inline-block;
+}
+
+/* Terms progress tracker */
+.terms-progress-container {
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.terms-progress-heading {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #0d5362;
+  font-weight: 600;
+}
+
+.terms-progress-heading i {
+  margin-right: 8px;
+}
+
+html[dir="rtl"] .terms-progress-heading i {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+.terms-progress-bar {
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.terms-progress-fill {
+  height: 100%;
+  background-color: #0d5362;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.terms-progress-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.terms-progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 33%;
+}
+
+.terms-progress-step.active {
+  color: #0d5362;
+  font-weight: bold;
+}
+
+.terms-progress-step.completed {
+  color: #0d5362;
+}
+
+.terms-progress-step.completed::before {
+  content: '✓';
+  display: inline-block;
+  margin-right: 3px;
+}
+
+html[dir="rtl"] .terms-progress-step.completed::before {
+  margin-right: 0;
+  margin-left: 3px;
+}
+
+/* Enhanced payment button transitions */
+.payment-button-enabled {
+  animation: pulse-button 0.8s ease-in-out;
+  transform-origin: center;
+  box-shadow: 0 5px 15px rgba(13, 83, 98, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.payment-button-enabled:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(13, 83, 98, 0.4) !important;
+}
+
+@keyframes pulse-button {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 5px 15px rgba(13, 83, 98, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(13, 83, 98, 0.4);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 5px 15px rgba(13, 83, 98, 0.3);
+  }
+}
+
+/* Floating accept button CSS removed */
+
+/* Terms reminder modal */
+.terms-reminder-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+}
+
+.terms-reminder-content {
+  background-color: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  animation: modal-fade-in 0.3s ease-out;
+}
+
+.terms-reminder-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  color: #0d5362;
+}
+
+.terms-reminder-header i {
+  font-size: 24px;
+  margin-right: 12px;
+}
+
+html[dir="rtl"] .terms-reminder-header i {
+  margin-right: 0;
+  margin-left: 12px;
+}
+
+.terms-reminder-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
